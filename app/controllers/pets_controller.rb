@@ -12,7 +12,8 @@ class PetsController < ApplicationController
 
   # GET /pets/new
   def new
-    @pet = Pet.new
+    @pet = Pet.new 
+    @pet.build_client
   end
 
   # GET /pets/1/edit

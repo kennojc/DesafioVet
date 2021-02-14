@@ -28,9 +28,13 @@
 
   <div class="field">
     <%= form.label :client_id %>
-    <%= form.text_field :client_id %>
+    <%= form.collection_select :client_id , Client.all, :id, :name, prompt: true  %>
   </div>
 
+  
+  <br>
+  
+  
   <div class="actions">
     <%= form.submit %>
   </div>

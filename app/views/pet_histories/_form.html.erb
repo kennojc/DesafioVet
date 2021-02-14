@@ -33,7 +33,8 @@
 
   <div class="field">
     <%= form.label :pet_id %>
-    <%= form.text_field :pet_id %>
+        <%= form.collection_select :pet_id , Pet.all, :id, :name, prompt: true  %>
+
   </div>
 
   <div class="actions">
