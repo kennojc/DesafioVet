@@ -2,6 +2,7 @@ class PetHistoriesController < ApplicationController
   before_action :set_pet_history, only: %i[ show edit update destroy ]
 
   # GET /pet_histories or /pet_histories.json
+ 
   def index
     @pet_histories = PetHistory.all
   end

@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Dueño:</strong>
+  <%= @pet.owner %>
+</p>
+
+<p>
   <strong>Breed:</strong>
   <%= @pet.breed %>
 </p>
@@ -16,8 +21,23 @@
 </p>
 
 <p>
-  <strong>Client:</strong>
-  <%= @pet.client_id %>
+  <strong>Peso Promedio:</strong>
+  <%= @pet.avgw %>
+</p>
+
+<p>
+  <strong>Peso Máximo:(kilos)</strong>
+  <%= @pet.maxw %>
+</p>
+
+<p>
+  <strong>Altura Promedio: (centímetros)</strong>
+  <%= @pet.avgh %>
+</p>
+
+<p>
+  <strong>Altura Máxima:</strong>
+  <%= @pet.maxh %>
 </p>
 
 <%= link_to 'Edit', edit_pet_path(@pet) %> |

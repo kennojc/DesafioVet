@@ -9,6 +9,7 @@
       <th>Breed</th>
       <th>Birth</th>
       <th>Client</th>
+      <th>Visitas Totales</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,8 @@
         <td><%= pet.breed %></td>
         <td><%= pet.birth %></td>
         <td><%= pet.client_id %></td>
+        <td><%= pet.visits %></td>
+        <td><%= link_to 'Ver Historial', consultation_pet_history_path(pet) %></td>
         <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
         <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
