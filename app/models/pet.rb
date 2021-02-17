@@ -27,4 +27,6 @@ class Pet < ApplicationRecord
     client.name
   end
 
+  
+
 end

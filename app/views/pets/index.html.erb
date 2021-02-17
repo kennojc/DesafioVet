@@ -22,7 +22,6 @@
         <td><%= pet.birth %></td>
         <td><%= pet.client_id %></td>
         <td><%= pet.visits %></td>
-        <td><%= link_to 'Ver Historial', pets_consult_path %></td>
         <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
         <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>

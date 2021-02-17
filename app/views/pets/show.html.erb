@@ -40,5 +40,25 @@
   <%= @pet.maxh %>
 </p>
 
+<br>
+<br>
+<div>
+  <ol>
+            <% @pet.pet_histories.each do |pet| %> 
+                <li>
+                  <%= pet.diagnose %> , <%= pet.created_at.to_date %>, 
+                </li>
+                <li>
+                  <%= pet.weight %>, <%= pet.height %>,
+                </li>
+
+            <% end %>
+          </ol>
+
+</div>
+
+
+
+<%= link_to 'Consultas' , pet_histories_path(@pet) %>
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %>
