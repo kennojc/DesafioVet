@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+  root 'pages#index'
   resources :pet_histories
   resources :pets
   resources :clients

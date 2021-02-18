@@ -1,7 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="open" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Información General
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        
+      <p>
+  <strong>Nombre:</strong>
   <%= @pet.name %>
 </p>
 
@@ -11,12 +21,12 @@
 </p>
 
 <p>
-  <strong>Breed:</strong>
+  <strong>Raza:</strong>
   <%= @pet.breed %>
 </p>
 
 <p>
-  <strong>Birth:</strong>
+  <strong>Nacimiento:</strong>
   <%= @pet.birth %>
 </p>
 
@@ -40,25 +50,53 @@
   <%= @pet.maxh %>
 </p>
 
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Historial de Consultas
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        
+      
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Diagnóstico</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Peso</th>
+      <th scope="col">Altura</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @pet.pet_histories.each do |pet| %>
+    <tr>
+      <td><%= pet.diagnose %></td>
+      <td><%= pet.created_at.to_date %></td>
+      <td><%= pet.weight %></td>
+      <td><%= pet.height %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+      
+      
+      
+      </div>
+    </div>
+  </div>
+  
 <br>
 <br>
-<div>
-  <ol>
-            <% @pet.pet_histories.each do |pet| %> 
-                <li>
-                  <%= pet.diagnose %> , <%= pet.created_at.to_date %>, 
-                </li>
-                <li>
-                  <%= pet.weight %>, <%= pet.height %>,
-                </li>
 
-            <% end %>
-          </ol>
-
-</div>
-
-
-
-<%= link_to 'Consultas' , pet_histories_path(@pet) %>
-<%= link_to 'Edit', edit_pet_path(@pet) %> |
-<%= link_to 'Back', pets_path %>
+<%= link_to 'Detalles de Consultas' , pet_histories_path(@pet), class: "btn btn-info mx-2" %>
+ |
+<%= link_to 'Listado de Mascotas', pets_path, class: "btn btn-info mx-2" %>

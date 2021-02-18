@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pets</h1>
+<h1>Mascotas Ingresadas</h1>
 
-<table>
+<table class="table table-warning text-center">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Breed</th>
-      <th>Birth</th>
-      <th>Client</th>
+      <th>Nombre</th>
+      <th>Raza</th>
+      <th>Fecha Nacimiento</th>
+      <th>Cliente</th>
       <th>Visitas Totales</th>
       <th colspan="3"></th>
     </tr>
@@ -20,11 +20,11 @@
         <td><%= pet.name %></td>
         <td><%= pet.breed %></td>
         <td><%= pet.birth %></td>
-        <td><%= pet.client_id %></td>
+        <td><%= pet.owner %></td>
         <td><%= pet.visits %></td>
-        <td><%= link_to 'Show', pet %></td>
-        <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
-        <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Más Info', pet %></td>
+        <td><%= link_to 'Editar', edit_pet_path(pet) %></td>
+        <td><%= link_to 'Borrar', pet, method: :delete, data: { confirm: 'Confirma eliminación?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,6 @@
 
 <br>
 
-<%= link_to 'New Pet', new_pet_path %>
+<%= link_to 'Nueva Mascota', new_pet_path, class: "btn btn-info mx-2" %>
+<%= link_to 'Regresar', pages_index_path, class: "btn btn-warning mx-2" %>
+
